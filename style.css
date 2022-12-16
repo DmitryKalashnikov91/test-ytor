@@ -39,22 +39,21 @@ body {
 }
 .triangle {
     position: relative;
-    right: 0;
-    top: 0;
+    
 }
 .triangle::after {
     content: ''; 
     position: absolute;
     right: 0;
     top: 0;
-    border: 100px solid transparent;
-    border-right: 100px solid rgba(206,54,7,255);
-    border-bottom: 100px solid rgba(206,54,7,255);
+    border: calc(var(--index)*5) solid transparent;
+    border-right: calc(var(--index)*5) solid rgba(206,54,7,255);
+    border-bottom: calc(var(--index)*5) solid rgba(206,54,7,255);
    }
 .rectangle {
     position: absolute;
     left: 47vw;
-    top: 5vh;
+    top: 3vw;
     transform: rotate(315deg);
     background-color:rgba(28,63,155,255);
     width: calc(var(--index)*4);
@@ -65,16 +64,31 @@ body {
     width: calc(var(--index)*7);
     height: calc(var(--index)*7);
     border-radius: 50%;
-    top: 35%;
-    left: 53%;
+    top: 18vw;
+    left: 53vw;
     background-color: #0ca565;
 }
 .rect_radius {
     position: absolute;
-    top: 65%;
-    left: 34%;
+    top: 32vw;
+    left: 34vw;
     width: calc(var(--index)*23);
     border-radius: 40px;
     height: calc(var(--index)*5);
     background-color: rgba(146,15,191,255);
+}
+@media (max-width: 600px) {
+    .rectangle {
+        left: 40vw;
+    }
+    .triangle::after {
+        right: 13vw;
+    }
+    .round {
+        top: 35vw;
+    }
+    .rect_radius {
+        top: 63vw;
+        left: 12vw;
+    }
 }
